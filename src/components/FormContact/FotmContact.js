@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Input , Label, Form} from "./FormContact.styled";
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "Redux/contactsSlice";
+import { addContact } from "Redux/operations";
 import { getContacts } from "Redux/selectors";
 
 export const FormContact = () => {
@@ -29,7 +29,7 @@ export const FormContact = () => {
     if (include) {
       return alert(`${nameNewContact} is already in contacts.`)
     } else {
-      dispatch(addContact(nameNewContact, number));
+      dispatch(addContact({name: nameNewContact, number}));
     }
     evnt.target.reset()
   }

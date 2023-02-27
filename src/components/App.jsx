@@ -3,6 +3,9 @@
 import { FormContact } from "./FormContact/FotmContact";
 import { Contacts } from "./Contacts/Contacts";
 import "@fontsource/rajdhani";
+import { useEffect } from "react";
+import { fatchContacts } from "Redux/operations";
+import { useDispatch } from "react-redux";
 // import { useDispatch, useSelector } from "react-redux";
 // import { getContacts, getFilter } from "./Redux/selectors";
 
@@ -25,7 +28,8 @@ import "@fontsource/rajdhani";
 
 export const App = () => {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  useEffect(() => {dispatch(fatchContacts())},[dispatch])
 
   // const contacts = useSelector(getContacts);
   // const filter = useSelector(getFilter);
