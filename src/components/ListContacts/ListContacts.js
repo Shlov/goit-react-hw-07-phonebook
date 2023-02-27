@@ -10,8 +10,6 @@ export const ListContacts = () => {
   const filter = useSelector(getFilter).query;
   const dispatch = useDispatch();
 
-  // console.log(getContacts().items)
-
   const contacts = contactsState.filter(({name}) => name.toLowerCase().includes(filter.toLowerCase()))
 
   return (
